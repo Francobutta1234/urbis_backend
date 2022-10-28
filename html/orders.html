@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js%22%3E"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js%22%3E"></script>
+</head>
+<body>
+    <h1>HAGA SU PEDIDO</h1>
+
+  <hr>
+
+  <form enctype="text/plain" id="form">
+
+    <table border="8" style="margin: 0 auto;">
+      <tbody>
+      <tr>
+        <td>Nombre y apellido</td>
+        <td>
+          <input type="text" name="nombre" id="nombre" placeholder="Escriba aquí" v-model="nombre">
+        </td>
+      </tr>
+
+      <tr>
+        <td>Teléfono</td>
+        <td>
+          <input type="tel" name="telefono" id="telefono" maxlength="10">
+        </td>
+      </tr>
+      <tr>
+        <td>Modo de Entrega</td>
+        <td>
+          <input type="radio" name="modo" id="entrega" value="Takeaway">Takeaway
+          <input type="radio" name="modo" id="entrega" value="Delivery">Delivery
+        </td>
+      </tr>
+      <tr>
+<td>¿Qué desea encargar?</td>
+        <td>
+          Entrada <select name="entrada" id="entrada" v-model="entrada">
+          <option value="-">-</option>
+          <option value="Rabas">Gambas</option>
+          <option value="Tortilla">Tortilla</option>
+          <option value="Buñuelos">Buñuelos</option>
+          <option value="Burrata">Lengua</option>
+        </select>
+          <br>
+          Plato principal <select name="princi" id="plato" v-model="plato">
+          <option value="-">-</option>
+          <option value="Milanesa">Milanesa</option>
+          <option value="Fideos">Ñoquis</option>
+          <option value="Carne al horno">Carne al horno</option>
+          <option value="Ñoquis">Pollo</option>
+        </select>
+          <br>
+          Postre <select name="postre" id="postre" v-model="postre">
+          <option value="-">-</option>
+          <option value="Ensalada de fruta">Ensalada de fruta</option>
+          <option value="Flan">Flan</option>
+          <option value="Helado">Helado</option>
+          <option value="Tiramisu">Cafe</option>
+        </select>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>
+          <p>Horario de Entrega</p>
+        </td>
+        <td>
+          <input type="time" name="fecha" id="horario" v-model="horaEntrega">
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+  </form>
+
+  <br/>
+  <br/>
+
+  <footer id="footer">
+    <input type='submit' value="Enviar">
+    <input type="reset" value="Limpiar">
+  </footer>
+
+    <br/>
+    <br/>
+
+</body>
+
+<style>
+    body{
+  text-align: center;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+#form {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+}
+
+#form th,
+#form td {
+  padding: 12px 15px;
+}
+
+#form tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+#form tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+#form tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+hr{
+  border:#1e253d solid 1px;
+}
+
+footer{
+  text-align: center;
+}
+
+#resumen {
+  text-align: center;
+}
+</style>
+
+<script>
+    export default {
+  name: "Pedir-tag",
+  data() {
+    return {
+      horaEntrega: "",
+      nombre: "",
+      entrada : "",
+      plato: "",
+      postre: "",
+    }
+  }
+}
+</script>
+</html>
+
